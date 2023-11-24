@@ -30,7 +30,7 @@ return new class extends Migration
             'email' => 'admin@gmail.com',
             'diachi' => 'TP.HCM',
             'phanquyen' => '0',
-            'avatar' => null,
+            'avatar' => '',
             'trangthai' => '0',
             'created_at' => now(),
             'updated_at' => now(),

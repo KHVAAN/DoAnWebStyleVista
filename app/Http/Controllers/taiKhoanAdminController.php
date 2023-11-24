@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class taiKhoanAdminController extends Controller
@@ -49,18 +48,19 @@ class taiKhoanAdminController extends Controller
         $user->phanquyen = $request->input('phanquyen');
         $user->avatar = $avatarUrl;
         $user->save();
-        return \redirect()->back();
+        return \redirect()->back()->with('success', 'Tài khoản đã được thêm thành công!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)    
+    public function show(string $id)
     {
         $user = User::where('id', $id)->first();
         if(!$user){
             return view('404');
         }
+
         return view('admin.tai-khoan.chinh-sua-tai-khoan', compact('user'));
     }
 
@@ -92,7 +92,7 @@ class taiKhoanAdminController extends Controller
         $user->avatar = $avatarUrl ?? $user->avatar;
         $user->updated_at = now();
         $user->save();
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Cập nhật thành công!');
     }
     /**
      * Update the specified resource in storage.
@@ -120,7 +120,7 @@ class taiKhoanAdminController extends Controller
                 $user->delete();
                 return \redirect()->route('admin.tai-khoan-khach-hang.danh-sach-tai-khoan-khach-hang');
             }
-            
+
         }else{
             return redirect()->route('admin.trang-chu');
         }

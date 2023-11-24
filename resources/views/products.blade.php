@@ -3,7 +3,7 @@
 @section('title', 'Sản phẩm')
 
 @section('content')
-        <!-- ***** Main Banner Area Start ***** -->
+    <!-- ***** Main Banner Area Start ***** -->
     <div class="page-heading" id="top">
         <div class="container">
             <div class="row">

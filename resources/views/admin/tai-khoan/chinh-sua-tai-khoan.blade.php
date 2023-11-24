@@ -5,11 +5,12 @@
         <div class="form-group col-md-9">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Chỉnh sửa tài khoản @if ($user->phanquyen == 1)
+                    {{-- <h6 class="m-0 font-weight-bold text-primary">Chỉnh sửa tài khoản @if ($user->phanquyen == 1)
                             quản trị viên
                         @else
                             khách hàng
-                        @endif
+                        @endif --}}
+                    SỬA TÀI KHOẢN QUẢN TRỊ VIÊN
                     </h6>
                 </div>
                 <div class="card-body">
@@ -27,29 +28,29 @@
                         <div class="form-group">
                             <label for="inputAddress">Họ và tên</label>
                             <input type="text" name="hovaten" class="form-control" id="inputAddress"
-                                placeholder="{{ $user->hovaten }}">
+                                value="{{ old('name', $user->hovaten) }}">
                         </div>
                         <div class="form-group">
                             <label for="inputAddress2">Số điện thoại</label>
                             <input type="number" name="sdt" class="form-control" id="inputAddress2"
-                                placeholder="{{ $user->sdt }}">
+                                value="{{ old('name', $user->sdt) }}">
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="inputCity">Địa chỉ</label>
                                 <input type="text" name="diachi" class="form-control" id="inputCity"
-                                    placeholder="{{ $user->diachi }}">
+                                    value="{{ old('name', $user->diachi) }}">
                             </div>
 
                             <div class="form-group col-md-3">
                                 <label for="inputState">Chức vụ</label>
                                 <select id="inputState" name="phanquyen" class="form-control">
-                                    @if ($user->phanquyen == 1)
+                                    {{-- @if ($user->phanquyen == 1)
                                         <option selected value="1">Quản trị viên</option>
                                     @else
                                         <option selected value="2">Khách hàng</option>
-                                    @endif
-                                    </option>
+                                    @endif --}}
+
                                     @if ($user->phanquyen == 1)
                                         <option value="1">Quản trị viên</option>
                                         <option value="2">Khách hàng</option>
@@ -61,7 +62,15 @@
                                 <input type="file" name="avatar" class="form-control" id="customFile" />
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Xác nhận chỉnh sửa</button>
+
+
+                        @csrf
+                        <button type="submit" class="btn btn-success">Lưu</button> 
+                        @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
                     </form>
                 </div>
 

@@ -31,11 +31,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"> ĐỒHIỆUCHẤT <sup></sup></div>
+                <div class="sidebar-brand-text mx-3"> QUẢN LÍ SHOP <sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -72,7 +72,11 @@
                             <h6 class="collapse-header">Chức năng:</h6>
                             <a class="collapse-item"
                                 href="{{ route('admin.tai-khoan-admin.danh-sach-tai-khoan-admin') }}">Danh sách tài
-                                khoản</a>
+                                khoản
+                            </a>
+                            <a class="collapse-item" href="{{ route('admin.tai-khoan.them-tai-khoan-admin') }}">Thêm
+                                tài khoản
+                            </a>
                         </div>
                     </div>
                 </li>
@@ -94,11 +98,6 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('admin.tai-khoan.them-tai-khoan-admin') }}">
-                    <i class="fa fa-user-plus" aria-hidden="true"></i>
-                    <span>Thêm tài khoản</span></a>
-            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -117,13 +116,13 @@
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
+                        <a class="collapse-item" href="/dang-nhap">Login</a>
+                        <a class="collapse-item" href="/dang-ki">Register</a>
                         <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href="/404">404 Page</a>
+                        {{-- <a class="collapse-item" href="blank.html">Blank Page</a> --}}
                     </div>
                 </div>
             </li>
@@ -335,22 +334,26 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 @php
-$name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $name }}</span>
-                                <?php
+                                $name = session('name');
+                                $email = session('email');
+                                $diachi = session('diachi');
+                                $sdt = session('sdt');
                                 $avatar = session('avatar');
-                                ?>
+                                @endphp
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $name }}</span>
+
                                 @if ($avatar == null)
-                                    <img class="img-profile rounded-circle" src="{{ asset('img/avatar.png') }}">
+                                    <img class="img-profile rounded-circle" src="{{ asset('img/user.jpg') }}">
                                 @else
-                                    <img class="img-profile rounded-circle" src="{{ $avatar }}">
+                                    <img class="img-profile rounded-circle" src={{ $avatar }}>
                                 @endif
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#adminModal">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Trang cá nhân
                                 </a>
@@ -391,13 +394,57 @@ $name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <!-- Information Admin Modal-->
+    <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thông tin tài khoản</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            @if ($avatar == null)
+                                    <img class="w-100" src="{{ asset('img/user.jpg') }}">
+                                @else
+                                    <img class="w-100" src={{ $avatar }}>
+                                @endif
+                        </div>
+                        <div class="col">
+                            <dl>
+                                <dt>Họ và tên: </dt>
+                                <dd>{{ $name }}</dd>
+
+                                <dt>Email: </dt>
+                                <dd>{{ $email }}</dd>
+
+                                <dt>Địa chỉ: </dt>
+                                <dd>{{ $diachi }}</dd>
+
+                                <dt>SĐT: </dt>
+                                <dd>{{ $sdt }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Đăng xuất?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>

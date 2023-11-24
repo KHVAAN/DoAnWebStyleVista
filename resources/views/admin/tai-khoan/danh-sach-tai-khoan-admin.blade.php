@@ -4,7 +4,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Danh sách tài khoản quản trị viên</h6>
+            <h6 class="m-0 font-weight-bold text-primary">DANH SÁCH TÀI KHOẢN QUẢN TRỊ VIÊN</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -19,7 +19,7 @@
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>Email</th>
                             <th>Họ và tên</th>
@@ -28,7 +28,7 @@
                             <th>Trạng thái</th>
                             <th>Chức năng</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     <tbody>
                         @foreach ($users as $item)
                             <tr>
@@ -44,7 +44,9 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('admin.tai-khoan.chinh-sua-tai-khoan', ['id' => $item->id]) }}">Xem chi tiết</a>
+                                    <a href="{{ route('admin.tai-khoan.chinh-sua-tai-khoan', ['id' => $item->id]) }} ">Sửa
+                                        thông tin</a>
+
                                 </td>
                             </tr>
                         @endforeach
@@ -53,7 +55,7 @@
             </div>
         </div>
     </div>
-    
+
 @section('scr')
     <!-- Page level plugins -->
     <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>

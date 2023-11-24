@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+
+
 class loginController extends Controller
 {
     /**
@@ -16,19 +18,21 @@ class loginController extends Controller
     {
         $request->validate([
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required|min:6',
         ]);
         $taiKhoan = $request->only('email', 'password');
-        if(Auth::attempt($taiKhoan)){
+        if (Auth::attempt($taiKhoan)) {
             $user = Auth::user();
-            session(['id' => $user->id, 'name' => $user->hovaten, 'chucvu' => $user->phanquyen, 'avatar'=>$user->avatar]);
+            session(['id' => $user->id, 'name' => $user->hovaten, 'chucvu' => $user->phanquyen, 'avatar' => $user->avatar]);
+            session(['email' => $user->email, 'diachi' => $user->diachi, 'sdt' => $user->sdt]);
             $phanQuyen = $user->phanQuyen;
             $chuyenDoi = intval($phanQuyen);
             if($chuyenDoi == 0 || $chuyenDoi == 1){
                 return \redirect()->route('admin.trang-chu');
             }
-        }else{
-            return redirect('dang-nhap');
+            else {
+                return redirect('dang-nhap');
+            }
         }
     }
 
@@ -45,7 +49,7 @@ class loginController extends Controller
      */
     public function register(Request $request)
     {
-        
+
         $password = $request->input('password');
         $user = new User();
         $user->hovaten = $request->input('name');

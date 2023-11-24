@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -13,11 +15,11 @@ class taiKhoanKhachHangController extends Controller
      */
     public function index()
     {
-        $users = User::where('phanquyen', 2)
-        ->get();
+        $users = User::where('phanquyen', 2)->get();
         return view('admin.tai-khoan.danh-sach-tai-khoan-khach-hang', compact('users'));
-    }
 
+    }
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -65,4 +67,9 @@ class taiKhoanKhachHangController extends Controller
     {
         //
     }
+
+
+    /**
+     * Log the user out of the application.
+     */
 }

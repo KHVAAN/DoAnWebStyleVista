@@ -278,7 +278,7 @@
         <div class="form-container sign-up-container">
             <form action="{{route('xu-li-dang-ki')}}" method="POST">
                 @csrf
-                <h1>Đăng kí tài khoản</h1>
+                <h1>Đăng kí</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>

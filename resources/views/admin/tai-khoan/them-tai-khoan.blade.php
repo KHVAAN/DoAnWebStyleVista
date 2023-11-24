@@ -3,14 +3,11 @@
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Thêm tài khoản @if ($chucvu==0)
-                quản trị viên hoặc khách hàng
-            @else
-                khách hàng
-            @endif </h6>
+            <h6 class="m-0 font-weight-bold text-primary">THÊM TÀI KHOẢN QUẢN TRỊ VIÊN</h6>
         </div>
         <div class="card-body">
-            <form action="{{route('admin.tai-khoan.xu-li-them-tai-khoan-admin')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.tai-khoan.xu-li-them-tai-khoan-admin') }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -18,8 +15,9 @@
                         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="inputPassword4">Password</label>
-                        <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <label for="inputPassword4">Mật khẩu</label>
+                        <input type="password" name="password" class="form-control" id="inputPassword4"
+                            placeholder="Mật khẩu">
                     </div>
                 </div>
                 <div class="form-group">
@@ -28,7 +26,8 @@
                 </div>
                 <div class="form-group">
                     <label for="inputAddress2">Số điện thoại</label>
-                    <input type="number" name="sdt" class="form-control" id="inputAddress2" placeholder="Số điện thoại">
+                    <input type="number" name="sdt" class="form-control" id="inputAddress2"
+                        placeholder="Số điện thoại">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-5">
@@ -39,9 +38,8 @@
                         <div class="form-group col-md-3">
                             <label for="inputState">Chức vụ</label>
                             <select id="inputState" name="phanquyen" class="form-control">
-                                <option selected>Chức vụ</option>
-                                <option value="1" >Quản trị viên</option>
-                                <option value="2" >Khách hàng</option>
+                                <option value="1">Quản trị viên</option>
+                                <option value="2">Khách hàng</option>
                             </select>
                         </div>
                     @else
@@ -49,7 +47,7 @@
                             <label for="inputState">Chức vụ</label>
                             <select id="inputState" name="phanquyen" class="form-control">
                                 <option selected>Chức vụ</option>
-                                <option value="2" >Khách hàng</option>
+                                <option value="2">Khách hàng</option>
                             </select>
                         </div>
                     @endif
@@ -58,7 +56,14 @@
                         <input type="file" name="avatar" class="form-control" id="customFile" />
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Xác nhận</button>
+                <button type="submit" class="btn btn-primary">Thêm</button>
+                @csrf
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
             </form>
         </div>
     </div>
