@@ -1,27 +1,8 @@
 @extends('layout.index')
 
-@section('title', 'About')
-
-{{-- @section('header')
-    @parent
-@endsection --}}
+@section('title', 'Giới thiệu')
 
 @section('content')
-    <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading about-page-heading" id="top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="inner-content">
-                        <h2>About Our Company</h2>
-                        <span>Awesome, clean &amp; creative HTML5 Template</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Main Banner Area End ***** -->
-
 
     <!-- ***** About Area Starts ***** -->
     <div class="about-us">
@@ -29,27 +10,22 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="left-image">
-                        <img src="assets/images/about-left-image.jpg" alt="">
+                        <img src="img/about-left-image.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="right-content">
-                        <h4>About Us &amp; Our Skills</h4>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt
-                            ut labore.</span>
+                        <h4>GIỚI THIỆU VỀ STYLE VISTA</h4>
+                        <span>Mô tả ở đây</span>
                         <div class="quote">
                             <i class="fa fa-quote-left"></i>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiuski smod kon tempor
-                                incididunt ut labore.</p>
+                            <p>Mô tả ở đây</p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut
-                            labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip.</p>
+                        <p>Mô tả ở đây</p>
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -64,8 +40,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Amazing Team</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>THÀNH VIÊN</h2>
+                        {{-- <span>Details to details is what makes Hexashop different from the other themes.</span> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -75,17 +51,14 @@
                                 <div class="inner-content">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <img src="assets/images/team-member-01.jpg">
                         </div>
                         <div class="down-content">
-                            <h4>Ragnar Lodbrok</h4>
-                            <span>Product Caretaker</span>
+                            <h4>Thành viên 1</h4>
+                            <span>Công việc</span>
                         </div>
                     </div>
                 </div>
@@ -96,17 +69,14 @@
                                 <div class="inner-content">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <img src="assets/images/team-member-02.jpg">
                         </div>
                         <div class="down-content">
-                            <h4>Ragnar Lodbrok</h4>
-                            <span>Product Caretaker</span>
+                            <h4>Thành viên 2</h4>
+                            <span>Công việc</span>
                         </div>
                     </div>
                 </div>
@@ -117,17 +87,14 @@
                                 <div class="inner-content">
                                     <ul>
                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-behance"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <img src="assets/images/team-member-03.jpg">
                         </div>
                         <div class="down-content">
-                            <h4>Ragnar Lodbrok</h4>
-                            <span>Product Caretaker</span>
+                            <h4>Thành viên 3</h4>
+                            <span>Công việc</span>
                         </div>
                     </div>
                 </div>
@@ -142,31 +109,29 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Our Services</h2>
-                        <span>Details to details is what makes Hexashop different from the other themes.</span>
+                        <h2>DỊCH VỤ</h2>
+                        {{-- <span>Details to details is what makes Hexashop different from the other themes.</span> --}}
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
-                        <h4>Synther Vaporware</h4>
-                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
-                            labore, et dolore quis ipsum suspend.</p>
+                        <h4>Chính Sách Bảo Hành</h4>
+                        <p>Chi tiết hơn</p>
                         <img src="assets/images/service-01.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
-                        <h4>Locavore Squidward</h4>
-                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
-                            labore, et dolore quis ipsum suspend.</p>
+                        <h4>Chính Sách Đổi Trả</h4>
+                        <p>Chi tiết hơn</p>
+
                         <img src="assets/images/service-02.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="service-item">
-                        <h4>Health Gothfam</h4>
-                        <p>Lorem ipsum dolor sit amet, consecteturti adipiscing elit, sed do eiusmod temp incididunt ut
-                            labore, et dolore quis ipsum suspend.</p>
+                        <h4>Chăm Sóc Khách Hàng</h4>
+                        <p>Chi tiết hơn</p>
                         <img src="assets/images/service-03.jpg" alt="">
                     </div>
                 </div>

@@ -5,12 +5,11 @@
         <div class="form-group col-md-9">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    {{-- <h6 class="m-0 font-weight-bold text-primary">Chỉnh sửa tài khoản @if ($user->phanquyen == 1)
-                            quản trị viên
+                    <h6 class="m-0 font-weight-bold text-primary">SỬA TÀI KHOẢN @if ($user->phanquyen == 1)
+                            QUẢN TRỊ VIÊN
                         @else
-                            khách hàng
-                        @endif --}}
-                    SỬA TÀI KHOẢN QUẢN TRỊ VIÊN
+                            KHÁCH HÀNG
+                        @endif
                     </h6>
                 </div>
                 <div class="card-body">
@@ -45,11 +44,11 @@
                             <div class="form-group col-md-3">
                                 <label for="inputState">Chức vụ</label>
                                 <select id="inputState" name="phanquyen" class="form-control">
-                                    {{-- @if ($user->phanquyen == 1)
+                                    @if ($user->phanquyen == 1)
                                         <option selected value="1">Quản trị viên</option>
                                     @else
                                         <option selected value="2">Khách hàng</option>
-                                    @endif --}}
+                                    @endif
 
                                     @if ($user->phanquyen == 1)
                                         <option value="1">Quản trị viên</option>
@@ -65,7 +64,7 @@
 
 
                         @csrf
-                        <button type="submit" class="btn btn-success">Lưu</button> 
+                        <button type="submit" class="btn btn-success">Lưu</button>
                         @if (session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}

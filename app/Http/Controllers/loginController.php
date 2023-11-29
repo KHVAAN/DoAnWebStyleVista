@@ -30,6 +30,7 @@ class loginController extends Controller
             if($chuyenDoi == 0 || $chuyenDoi == 1){
                 return \redirect()->route('admin.trang-chu');
             }
+
             else {
                 return redirect('dang-nhap');
             }

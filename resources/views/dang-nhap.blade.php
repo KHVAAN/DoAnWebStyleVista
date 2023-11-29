@@ -276,7 +276,7 @@
     <h2>Chào mừng bạn đến với SHOPDOHIEU</h2>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="{{route('xu-li-dang-ki')}}" method="POST">
+            <form action="{{ route('xu-li-dang-ki') }}" method="POST">
                 @csrf
                 <h1>Đăng kí</h1>
                 <div class="social-container">
@@ -292,19 +292,21 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="{{ route('xu-li-dang-nhap')}}" method="post" id="form-login">
+            <form action="{{ route('xu-li-dang-nhap') }}" method="post" id="form-login">
                 @csrf
-                    <h1>Đăng nhập</h1>
-                    <div class="social-container">
-                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                        <span>Hoặc sử dụng tài khoản của bạn</span>
-                        <input type="email" name="email" placeholder="Email" />
-                        <input type="password" name="password" placeholder="Password" />
-                        <a href="#">Quên mật khẩu?</a>
-                        <button type="submit">Đăng nhập</button>
+                <h1>Đăng nhập</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>Hoặc sử dụng tài khoản của bạn</span>
+                <input type="email" name="email" placeholder="Email" id="email" required />
+
+                <input type="password" name="password" placeholder="Password" id="password" required />
+               
+                <a href="#">Quên mật khẩu?</a>
+                <button type="submit">Đăng nhập</button>
             </form>
         </div>
         <div class="overlay-container">

@@ -22,32 +22,38 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/dang-nhap', function () {
-    return view('login');
+    return view('dang-nhap');
 })->name('dang-nhap');
 
 Route::get('/', function () {
     return view('home');
 })->name('trang-chu-nguoi-dung');
 
-Route::get('/about', function () {
-    return view('about');
+Route::get('/gioi-thieu', function () {
+    return view('gioi-thieu');
 })->name('trang-gioi-thieu');
 
-Route::get('/products', function () {
-    return view('products');
+Route::get('/san-pham', function () {
+    return view('san-pham');
 })->name('trang-san-pham');
 
-Route::get('/contact', function () {
-    return view('contact');
+Route::get('/lien-he', function () {
+    return view('lien-he');
 })->name('trang-lien-he');
 
-Route::get('/single-product', function () {
-    return view('single-product');
+Route::get('/chi-tiet-san-pham', function () {
+    return view('chi-tiet-san-pham');
 })->name('trang-chi-tiet-san-pham');
+
+Route::get('/gio-hang', function () {
+    return view('gio-hang');
+})->name('trang-gio-hang');
 
 Route::get('/404', function () {
     return view('404');
 })->name('trang-loi');
+
+
 /**
  * đăng xuất
  */
@@ -64,6 +70,8 @@ Route::post('/dang-ki', [loginController::class, 'register'])->name('xu-li-dang-
 
 Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => 'admin'], function () {
     Route::get('/', [loginController::class, 'index'])->name('trang-chu');
+
+
     /**
      * tài khoản admin/ quản trị viên
      */
@@ -72,6 +80,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => 'admin'], 
     });
     Route::group(['prefix' => '/tai-khoan-khach-hang', 'as' => 'tai-khoan-khach-hang.'], function () {
         Route::get('/danh-sach-tai-khoan-khach-hang', [taiKhoanKhachHangController::class, 'index'])->name('danh-sach-tai-khoan-khach-hang');
+        Route::post('/dang-nhap', [taiKhoanAdminController::class, 'authenticate'])->name('dang-nhap');
     });
     Route::group(['prefix' => '/tai-khoan', 'as' => 'tai-khoan.'], function () {
         Route::get('/them-tai-khoan', [taiKhoanAdminController::class, 'create'])->name('them-tai-khoan-admin');
@@ -85,6 +94,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => 'admin'], 
     /**
      * Sản phẩm
      */
+
     Route::group(['prefix' => '/san-pham', 'as' => 'san-pham.'], function () {
         Route::get('/danh-sach-san-pham', [sanPhamController::class, 'index'])->name('san-pham');
     });
