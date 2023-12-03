@@ -26,79 +26,27 @@
                 <div class="col-lg-12">
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="chi-tiet-san-pham"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
+                            @foreach ($ctsp as $item)
+                                <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{{ route('trang-chi-tiet-san-pham', ['id' => $item->id]) }}"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                                <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="assets/images/men-01.jpg" alt="">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{ $item->tensanpham }}</h4>
+                                        <span>200</span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
                                         </ul>
                                     </div>
-                                    <img src="assets/images/men-01.jpg" alt="">
                                 </div>
-                                <div class="down-content">
-                                    <h4>Tên sản phẩm</h4>
-                                    <span>Giá</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="chi-tiet-san-pham"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="assets/images/men-02.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Tên sản phẩm</h4>
-                                    <span>Giá</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="chi-tiet-san-pham"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="assets/images/men-03.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Tên sản phẩm</h4>
-                                    <span>Giá</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="chi-tiet-san-pham"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="assets/images/men-01.jpg" alt="">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Tên sản phẩm</h4>
-                                    <span>Giá</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -218,7 +166,7 @@
                 </div>
             </div>
         </div>
-       <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="women-item-carousel">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class taiKhoanAdminController extends Controller
@@ -31,6 +33,27 @@ class taiKhoanAdminController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'sdt' => 'required|size:10',
+            'hovaten' => 'required|max:30',
+            'email' => 'required|email|unique:user,email',
+            'password' => 'required|min:6',
+            'diachi' => 'required|max:255',
+            'phanquyen' => 'required',
+        ], [
+            'sdt.required' => 'Không được để trống',
+            'sdt.size' => 'Số điện thoại phải đủ 10 số',
+            'email.required' => 'Không được để trống',
+            'email.unique' => 'email đã tồn tại',
+            'email.email' => 'Định dạng không hợp lệ',
+            'hovaten.required' => 'Không được để trống',
+            'hovaten.max' => 'Mật khẩu không quá 30 ký tự',
+            'password.required' => 'Không được để trống',
+            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
+            'diachi.max' => 'Địa chỉ không quá 255 ký tự',
+            'diachi.required' => 'Không được để trống',
+            'phanquyen.required' => 'Không được để trống',
+        ]);     
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
@@ -48,19 +71,19 @@ class taiKhoanAdminController extends Controller
         $user->phanquyen = $request->input('phanquyen');
         $user->avatar = $avatarUrl;
         $user->save();
-        return \redirect()->back()->with('success', 'Tài khoản đã được thêm thành công!');
+        Alert()->success('Thành công','Thêm tài khoản thành công.');
+        return \redirect()->back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id)    
     {
         $user = User::where('id', $id)->first();
         if(!$user){
             return view('404');
         }
-
         return view('admin.tai-khoan.chinh-sua-tai-khoan', compact('user'));
     }
 
@@ -69,13 +92,25 @@ class taiKhoanAdminController extends Controller
      */
     public function editPassWord(Request $request, string $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
         $user->password = Hash::make($request->input('password'));
         $user->save();
         return \redirect()->back();
     }
     public function edit(Request $request, string $id)
     {
+        $request->validate([
+            'sdt' => 'required|size:10',
+            'hovaten' => 'required|max:30',
+            'diachi' => 'required|max:255',
+        ], [
+            'sdt.required' => 'Không được để trống',
+            'sdt.size' => 'Số điện thoại phải đủ 10 số',
+            'hovaten.required' => 'Không được để trống',
+            'hovaten.max' => 'Mật khẩu không quá 30 ký tự',
+            'diachi.max' => 'Địa chỉ không quá 255 ký tự',
+            'diachi.required' => 'Không được để trống',
+        ]);     
         if ($request->hasFile('avatar')) {
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
@@ -92,7 +127,8 @@ class taiKhoanAdminController extends Controller
         $user->avatar = $avatarUrl ?? $user->avatar;
         $user->updated_at = now();
         $user->save();
-        return redirect()->back()->with('success', 'Cập nhật thành công!');
+        Alert()->success('Thành công','Chỉnh sửa tài khoản thành công.');
+        return redirect()->back();
     }
     /**
      * Update the specified resource in storage.
@@ -120,7 +156,7 @@ class taiKhoanAdminController extends Controller
                 $user->delete();
                 return \redirect()->route('admin.tai-khoan-khach-hang.danh-sach-tai-khoan-khach-hang');
             }
-
+            
         }else{
             return redirect()->route('admin.trang-chu');
         }

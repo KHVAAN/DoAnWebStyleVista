@@ -20,6 +20,19 @@
     <!-- Custom styles for this template-->
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     @yield('css')
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -31,11 +44,11 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"> QUẢN LÍ SHOP <sup></sup></div>
+                <div class="sidebar-brand-text mx-3"> ĐỒHIỆUCHẤT <sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -72,11 +85,7 @@
                             <h6 class="collapse-header">Chức năng:</h6>
                             <a class="collapse-item"
                                 href="{{ route('admin.tai-khoan-admin.danh-sach-tai-khoan-admin') }}">Danh sách tài
-                                khoản
-                            </a>
-                            <a class="collapse-item" href="{{ route('admin.tai-khoan.them-tai-khoan-admin') }}">Thêm
-                                tài khoản
-                            </a>
+                                khoản</a>
                         </div>
                     </div>
                 </li>
@@ -98,40 +107,49 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.tai-khoan.them-tai-khoan-admin') }}">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    <span>Thêm tài khoản</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            {{-- <div class="sidebar-heading">
-                Addons
-            </div> --}}
+            <div class="sidebar-heading">
+                Sản phẩm
+            </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            {{-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Sản phẩm</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="/dang-nhap">Đăng nhập</a>
-                        <a class="collapse-item" href="/dang-ki">Đăng kí</a>
-                        <a class="collapse-item" href="/cap-nhat-mat-khau">Quên mật khẩu</a>
+                        <h6 class="collapse-header">Sản phẩm:</h6>
+                        <a class="collapse-item" href="{{ route('admin.san-pham.them-san-pham') }}">Thêm sản phẩm</a>
+                        <a class="collapse-item" href="{{ route('admin.san-pham.danh-sach-san-pham') }}">Danh sách sản
+                            phẩm</a>
                         <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Khác</h6>
-                        <a class="collapse-item" href="/404">Lỗi 404</a>
-
+                        <h6 class="collapse-header">Cấu hình sản phẩm:</h6>
+                        <a class="collapse-item" href="{{ route('admin.mau-san-pham.mau-san-pham') }}">Màu</a>
+                        <a class="collapse-item" href="{{ route('admin.nhan-hieu-san-pham.nhan-hieu-san-pham') }}">Nhãn
+                            hiệu</a>
                     </div>
                 </div>
-            </li> --}}
+
+            </li>
+
+            <!-- Nav Item - Charts -->
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{ route('admin.loai-san-pham.loai-san-pham') }}">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Loại sản phẩm</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
@@ -334,26 +352,26 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 @php
-                                $name = session('name');
-                                $email = session('email');
-                                $diachi = session('diachi');
-                                $sdt = session('sdt');
-                                $avatar = session('avatar');
-                                @endphp
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+$name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $name }}</span>
-
+                                <?php
+                                $avatar = session('avatar');
+                                ?>
                                 @if ($avatar == null)
-                                    <img class="img-profile rounded-circle" src="{{ asset('img/user.jpg') }}">
+                                    <img class="img-profile rounded-circle" src="{{ asset('img/avatar.png') }}">
                                 @else
-                                    <img class="img-profile rounded-circle" src={{ $avatar }}>
+                                    <img class="img-profile rounded-circle" src="{{ $avatar }}">
                                 @endif
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal"
-                                    data-target="#adminModal">
+                                <a class="dropdown-item" href="{{ route('trang-chu-nguoi-dung') }}">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Trang web
+                                </a>
+                                <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Trang cá nhân
                                 </a>
@@ -394,57 +412,13 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Information Admin Modal-->
-    <div class="modal fade" id="adminModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thông tin tài khoản</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col">
-                            @if ($avatar == null)
-                                    <img class="w-100" src="{{ asset('img/user.jpg') }}">
-                                @else
-                                    <img class="w-100" src={{ $avatar }}>
-                                @endif
-                        </div>
-                        <div class="col">
-                            <dl>
-                                <dt>Họ và tên: </dt>
-                                <dd>{{ $name }}</dd>
-
-                                <dt>Email: </dt>
-                                <dd>{{ $email }}</dd>
-
-                                <dt>Địa chỉ: </dt>
-                                <dd>{{ $diachi }}</dd>
-
-                                <dt>SĐT: </dt>
-                                <dd>{{ $sdt }}</dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thông báo</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng xuất?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -461,25 +435,26 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
-
-
-    @yield('scr')
+    @include('sweetalert::alert')
 </body>
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+<!-- Bootstrap core JavaScript-->
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<!-- Core plugin JavaScript-->
+<script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+
+<!-- Page level plugins -->
+<script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
+<script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
+
+
+@yield('scr')
 
 </html>

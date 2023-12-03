@@ -5,10 +5,10 @@
         <div class="form-group col-md-9">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">SỬA TÀI KHOẢN @if ($user->phanquyen == 1)
-                            QUẢN TRỊ VIÊN
+                    <h6 class="m-0 font-weight-bold text-primary">Chỉnh sửa tài khoản @if ($user->phanquyen == 0)
+                            quản trị viên
                         @else
-                            KHÁCH HÀNG
+                            khách hàng
                         @endif
                     </h6>
                 </div>
@@ -20,25 +20,28 @@
                             <div class="form-group col-md-12">
                                 <label for="inputEmail4">Email</label>
                                 <input type="email" name="email" class="form-control" id="inputEmail4"
-                                    placeholder="{{ $user->email }}" readonly>
+                                    value="{{ $user->email }}" readonly>
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Họ và tên</label>
                             <input type="text" name="hovaten" class="form-control" id="inputAddress"
-                                value="{{ old('name', $user->hovaten) }}">
+                                value="{{ $user->hovaten }}">
+                            <div class="error-message">{{ $errors->first('hovaten') }}</div>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress2">Số điện thoại</label>
                             <input type="number" name="sdt" class="form-control" id="inputAddress2"
-                                value="{{ old('name', $user->sdt) }}">
+                                value="{{ $user->sdt }}">
+                            <div class="error-message">{{ $errors->first('sdt') }}</div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-5">
                                 <label for="inputCity">Địa chỉ</label>
                                 <input type="text" name="diachi" class="form-control" id="inputCity"
-                                    value="{{ old('name', $user->diachi) }}">
+                                    value="{{ $user->diachi }}">
+                                <div class="error-message">{{ $errors->first('diachi') }}</div>
                             </div>
 
                             <div class="form-group col-md-3">
@@ -49,7 +52,7 @@
                                     @else
                                         <option selected value="2">Khách hàng</option>
                                     @endif
-
+                                    </option>
                                     @if ($user->phanquyen == 1)
                                         <option value="1">Quản trị viên</option>
                                         <option value="2">Khách hàng</option>
@@ -61,15 +64,7 @@
                                 <input type="file" name="avatar" class="form-control" id="customFile" />
                             </div>
                         </div>
-
-
-                        @csrf
-                        <button type="submit" class="btn btn-success">Lưu</button>
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+                        <button type="submit" class="btn btn-primary">Xác nhận chỉnh sửa</button>
                     </form>
                 </div>
 

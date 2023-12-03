@@ -47,7 +47,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="img/logo.png">
+                            <img src="{{asset('img/logo.png')}}">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -59,7 +59,7 @@
                             <li class="scroll-to-section"><a href="lien-he">Liên hệ</a></li>
                             <li class="scroll-to-section"><a href="gio-hang"><i class="fa fa-shopping-cart"
                                         style="font-size:20px"></i></a> </li>
-                            <li class="scroll-to-section"><a href="dang-nhap"><i class="fa fa-user"></i></a></li>
+                            <li class="scroll-to-section"><a href="dang-nhap"><i class="fa fa-user"></i>{{session('name')}}</a></li>
                             <li class="scroll-to-section"><a href="#"><i class="fa fa-heart-o" style="font-size:16px;"></i></a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -87,13 +87,13 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/banner-1.png" alt="" class="w-100">
+                    <img src="{{asset('img/banner-1.png')}}" alt="" class="w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/banner-2.png" alt="" class="w-100">
+                    <img src="{{asset('img/banner-2.png')}}" alt="" class="w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/banner-3.png" alt="" class="w-100">
+                    <img src="{{asset('img/banner-3.png')}}" alt="" class="w-100">
                 </div>
             </div>
 
@@ -106,9 +106,9 @@
             </a>
 
         </div>
-        @yield('content')
+        
     </div>
-
+    @yield('content')
     <!-- ***** Main Banner Area End ***** -->
 
     <!-- ***** Footer Start ***** -->
