@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="down-content">
                                         <h4>{{ $item->tensanpham }}</h4>
-                                        <span>200</span>
+                                        <span>{{ $item->dongia }}</span>
                                         <ul class="stars">
                                             <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
                                         </ul>

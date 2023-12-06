@@ -22,7 +22,7 @@ class nhanHieuController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

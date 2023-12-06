@@ -21,10 +21,9 @@ use Illuminate\Support\Facades\Hash;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
-
 |
 */
-
+Route::post('/dang-nhap',[loginController::class,'login'])->name('xu-li-dang-nhap');
 Route::get('/dang-nhap', function () {
     return view('login');
 })->name('dang-nhap');
@@ -97,6 +96,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin.', 'middleware' => 'admin'], 
         Route::post('/them-san-pham', [sanPhamController::class, 'store'])->name('xu-li-them-san-pham');
         Route::get('/them-san-pham-con/{id}', [sanPhamController::class, 'show'])->name('them-san-pham-con');
         Route::post('/them-san-pham-con/{id}', [sanPhamController::class, 'update'])->name('xu-li-them-san-pham-con');
+        Route::post('/xoa-hinh/{id}', [sanPhamController::class, 'xoaAnh'])->name('xu-li-xoa-hinh');
     });
     Route::group(['prefix' => '/loai-san-pham', 'as' => 'loai-san-pham.'], function (){
         Route::get('/loai-san-pham', [loaiSanPhamController::class, 'index'])->name('loai-san-pham');
