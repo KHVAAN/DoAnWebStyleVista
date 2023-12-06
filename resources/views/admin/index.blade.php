@@ -48,7 +48,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"> StyleVista <sup></sup></div>
+                <div class="sidebar-brand-text mx-3"> ĐỒHIỆUCHẤT <sup></sup></div>
             </a>
 
             <!-- Divider -->
@@ -367,7 +367,7 @@ $name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{ route('trang-chu-nguoi-dung') }}">
+                                <a class="dropdown-item" href="{{route('trang-chu-nguoi-dung')}}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Trang web
                                 </a>
@@ -437,10 +437,11 @@ $name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
 
     @include('sweetalert::alert')
 </body>
-<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+@include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 

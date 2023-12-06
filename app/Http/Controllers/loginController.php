@@ -29,9 +29,9 @@ class loginController extends Controller
         $taiKhoan = $request->only('email', 'password');
         if(Auth::attempt($taiKhoan)){
             $user = Auth::user();
-            session(['id' => $user->id,
-            'name' => $user->hovaten,
-            'chucvu' => $user->phanquyen,
+            session(['id' => $user->id, 
+            'name' => $user->hovaten, 
+            'chucvu' => $user->phanquyen, 
             'avatar'=>$user->avatar,
         ]);
             $name = $user->hovaten;
@@ -79,7 +79,7 @@ class loginController extends Controller
             'password.required' => 'Không được để trống',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
         ]);
-
+    
         $password = $request->input('password');
         $user = new User();
         $user->sdt = $request->input('sdt');
@@ -88,11 +88,11 @@ class loginController extends Controller
         $user->email = $request->input('email1');
         $user->diachi = $request->input('diachi');
         $user->save();
-
+    
         alert()->success('Đăng ký thành công', 'Bạn đã đăng ký thành công tài khoản');
         return redirect()->back();
     }
-
+    
 
     /**
      * Display the specified resource.

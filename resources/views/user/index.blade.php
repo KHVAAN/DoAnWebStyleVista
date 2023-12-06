@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>Hexashop Ecommerce HTML CSS Template</title>
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/templatemo-hexashop.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/templatemo-hexashop.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/owl-carousel.css') }}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl-carousel.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}">
-    <!--
+    <link rel="stylesheet" href="{{asset('assets/css/lightbox.css')}}">
+<!--
 
 TemplateMo 571 Hexashop
 
 https://templatemo.com/tm-571-hexashop
 
 -->
-</head>
-
-<body>
-
+    </head>
+    
+    <body>
+    
     <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
@@ -41,10 +40,10 @@ https://templatemo.com/tm-571-hexashop
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div>  
     <!-- ***** Preloader End ***** -->
-
-
+    
+    
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
@@ -77,12 +76,11 @@ https://templatemo.com/tm-571-hexashop
                                     <li><a href="#">Features Page 1</a></li>
                                     <li><a href="#">Features Page 2</a></li>
                                     <li><a href="#">Features Page 3</a></li>
-                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template
-                                            Page 4</a></li>
+                                    <li><a rel="nofollow" href="https://templatemo.com/page/4" target="_blank">Template Page 4</a></li>
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-                        </ul>
+                        </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -125,8 +123,7 @@ https://templatemo.com/tm-571-hexashop
                                         <div class="hover-content">
                                             <div class="inner">
                                                 <h4>Women</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
-                                                </p>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="#">Discover More</a>
                                                 </div>
@@ -146,8 +143,7 @@ https://templatemo.com/tm-571-hexashop
                                         <div class="hover-content">
                                             <div class="inner">
                                                 <h4>Men</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
-                                                </p>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="#">Discover More</a>
                                                 </div>
@@ -167,8 +163,7 @@ https://templatemo.com/tm-571-hexashop
                                         <div class="hover-content">
                                             <div class="inner">
                                                 <h4>Kids</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
-                                                </p>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="#">Discover More</a>
                                                 </div>
@@ -188,8 +183,7 @@ https://templatemo.com/tm-571-hexashop
                                         <div class="hover-content">
                                             <div class="inner">
                                                 <h4>Accessories</h4>
-                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.
-                                                </p>
+                                                <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                 <div class="main-border-button">
                                                     <a href="#">Discover More</a>
                                                 </div>
@@ -230,8 +224,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-01.jpg" alt="">
@@ -254,8 +247,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-02.jpg" alt="">
@@ -278,8 +270,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-03.jpg" alt="">
@@ -302,8 +293,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/men-01.jpg" alt="">
@@ -351,8 +341,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-01.jpg" alt="">
@@ -375,8 +364,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-02.jpg" alt="">
@@ -399,8 +387,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-03.jpg" alt="">
@@ -423,8 +410,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/women-01.jpg" alt="">
@@ -472,8 +458,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-01.jpg" alt="">
@@ -496,8 +481,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-02.jpg" alt="">
@@ -520,8 +504,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-03.jpg" alt="">
@@ -544,8 +527,7 @@ https://templatemo.com/tm-571-hexashop
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a>
-                                            </li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="assets/images/kid-01.jpg" alt="">
@@ -577,19 +559,12 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-lg-6">
                     <div class="left-content">
                         <h2>Explore Our Products</h2>
-                        <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or
-                            edit this layout. You can convert this template as any kind of ecommerce CMS theme as you
-                            wish.</span>
+                        <span>You are allowed to use this HexaShop HTML CSS template. You can feel free to modify or edit this layout. You can convert this template as any kind of ecommerce CMS theme as you wish.</span>
                         <div class="quote">
-                            <i class="fa fa-quote-left"></i>
-                            <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
+                            <i class="fa fa-quote-left"></i><p>You are not allowed to redistribute this template ZIP file on any other website.</p>
                         </div>
-                        <p>There are 5 pages included in this HexaShop Template and we are providing it to you for
-                            absolutely free of charge at our TemplateMo website. There are web development costs for us.
-                        </p>
-                        <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow"
-                                href="https://paypal.me/templatemo" target="_blank">support us</a> a little via
-                            PayPal. Please also tell your friends about our great website. Thank you.</p>
+                        <p>There are 5 pages included in this HexaShop Template and we are providing it to you for absolutely free of charge at our TemplateMo website. There are web development costs for us.</p>
+                        <p>If this template is beneficial for your website or business, please kindly <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">support us</a> a little via PayPal. Please also tell your friends about our great website. Thank you.</p>
                         <div class="main-border-button">
                             <a href="products.html">Discover More</a>
                         </div>
@@ -724,24 +699,21 @@ https://templatemo.com/tm-571-hexashop
                     </div>
                     <form id="subscribe" action="" method="get">
                         <div class="row">
-                            <div class="col-lg-5">
-                                <fieldset>
-                                    <input name="name" type="text" id="name" placeholder="Your Name"
-                                        required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-5">
-                                <fieldset>
-                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*"
-                                        placeholder="Your Email Address" required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-2">
-                                <fieldset>
-                                    <button type="submit" id="form-submit" class="main-dark-button"><i
-                                            class="fa fa-paper-plane"></i></button>
-                                </fieldset>
-                            </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-2">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                            </fieldset>
+                          </div>
                         </div>
                     </form>
                 </div>
@@ -758,9 +730,7 @@ https://templatemo.com/tm-571-hexashop
                             <ul>
                                 <li>Work Hours:<br><span>07:30 AM - 9:30 PM Daily</span></li>
                                 <li>Email:<br><span>info@company.com</span></li>
-                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a
-                                            href="#">Instagram</a>, <a href="#">Behance</a>, <a
-                                            href="#">Linkedin</a></span></li>
+                                <li>Social Media:<br><span><a href="#">Facebook</a>, <a href="#">Instagram</a>, <a href="#">Behance</a>, <a href="#">Linkedin</a></span></li>
                             </ul>
                         </div>
                     </div>
@@ -769,7 +739,7 @@ https://templatemo.com/tm-571-hexashop
         </div>
     </div>
     <!-- ***** Subscribe Area Ends ***** -->
-
+    
     <!-- ***** Footer Start ***** -->
     <footer>
         <div class="container">
@@ -780,8 +750,7 @@ https://templatemo.com/tm-571-hexashop
                             <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
                         </div>
                         <ul>
-                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a>
-                            </li>
+                            <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
                             <li><a href="#">hexashop@company.com</a></li>
                             <li><a href="#">010-020-0340</a></li>
                         </ul>
@@ -815,11 +784,9 @@ https://templatemo.com/tm-571-hexashop
                 </div>
                 <div class="col-lg-12">
                     <div class="under-footer">
-                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
-
-                            <br>Design: <a href="https://templatemo.com" target="_parent"
-                                title="free css templates">TemplateMo</a>
-                        </p>
+                        <p>Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved. 
+                        
+                        <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
                         <ul>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -831,42 +798,43 @@ https://templatemo.com/tm-571-hexashop
             </div>
         </div>
     </footer>
+    
 
+    <script src="{{asset('assets/js/jquery-2.1.0.min.js')}}"></script>
+    <script src="{{asset('assets/js/popper.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 
-    <script src="{{ asset('assets/js/jquery-2.1.0.min.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-
-    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('assets/js/accordions.js') }}"></script>
-    <script src="{{ asset('assets/js/datepicker.js') }}"></script>
-    <script src="{{ asset('assets/js/scrollreveal.min.js') }}"></script>
-    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/imgfix.min.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.js') }}"></script>
-    <script src="{{ asset('assets/js/lightbox.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.js') }}"></script>
+    <script src="{{asset('assets/js/owl-carousel.js')}}"></script>
+    <script src="{{asset('assets/js/accordions.js')}}"></script>
+    <script src="{{asset('assets/js/datepicker.js')}}"></script>
+    <script src="{{asset('assets/js/scrollreveal.min.js')}}"></script>
+    <script src="{{asset('assets/js/waypoints.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('assets/js/imgfix.min.js')}}"></script>
+    <script src="{{asset('assets/js/slick.js')}}"></script>
+    <script src="{{asset('assets/js/lightbox.js')}}"></script>
+    <script src="{{asset('assets/js/isotope.js')}}"></script>
     <script src="https://kit.fontawesome.com/f87157a229.js" crossorigin="anonymous"></script>
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
 
     <script>
+
         $(function() {
             var selectedClass = "";
-            $("p").click(function() {
-                selectedClass = $(this).attr("data-rel");
-                $("#portfolio").fadeTo(50, 0.1);
-                $("#portfolio div").not("." + selectedClass).fadeOut();
-                setTimeout(function() {
-                    $("." + selectedClass).fadeIn();
-                    $("#portfolio").fadeTo(50, 1);
-                }, 500);
-
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
             });
         });
+
     </script>
 
-</body>
-
+  </body>
 </html>

@@ -109,6 +109,7 @@
 @section('css')
 
     <style>
+        
         .preview-image {
             max-width: 100px;
             max-height: 100px;
