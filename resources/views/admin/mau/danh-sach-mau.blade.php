@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'màu sản phẩm')
+@section('title', 'Màu sản phẩm')
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -44,7 +44,7 @@
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>Tên màu</th>
                             <th>Trạng thái</th>
@@ -52,7 +52,7 @@
                             <th>Ngày cập nhật</th>
                             <th>Chức năng</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     <tbody>
                         @foreach ($mau as $item)
                             <tr>

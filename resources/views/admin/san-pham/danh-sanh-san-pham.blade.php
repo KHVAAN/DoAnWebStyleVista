@@ -40,8 +40,10 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('admin.san-pham.chi-tiet-san-pham', ['id' => $item->id])}}" style="color: red">Chi tiết sản phẩm</a>
-                                    <a href="{{ route('admin.san-pham.them-san-pham-con', ['id' => $item->id]) }}">Thêm sản phẩm con</a>
+                                    <a href="{{ route('admin.san-pham.chi-tiet-san-pham', ['id' => $item->id]) }}"
+                                        style="color: red">Chi tiết sản phẩm</a>
+                                    <a href="{{ route('admin.san-pham.them-san-pham-con', ['id' => $item->id]) }}">Thêm sản
+                                        phẩm con</a>
                                 </td>
                             </tr>
                         @endforeach

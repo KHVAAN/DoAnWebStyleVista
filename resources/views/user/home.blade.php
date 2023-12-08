@@ -1,6 +1,6 @@
 @extends('layout.index')
 
-@section('title', 'Home')
+@section('title', 'Trang chủ')
 
 {{-- @section('header')
     @parent
@@ -27,24 +27,25 @@
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
                             @foreach ($ctsp as $item)
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="{{route('trang-chi-tiet-san-pham', ['id' => $item->id])}}"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
+                                <div class="item">
+                                    <div class="thumb">
+                                        <div class="hover-content">
+                                            <ul>
+                                                <li><a href="{{ route('trang-chi-tiet-san-pham', ['id' => $item->id]) }}"><i
+                                                            class="fa fa-eye"></i></a></li>
+                                                <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <img src="assets/images/women-01.jpg" alt="">
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{ $item->tensanpham }}</h4>
+                                        <span></span>
+                                        <ul class="stars">
+                                            <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
                                         </ul>
                                     </div>
-                                    <img src="assets/images/men-01.jpg" alt="">
                                 </div>
-                                <div class="down-content">
-                                    <h4>{{$item->tensanpham}}</h4>
-                                    <span>{{$item->dongia}}</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -165,7 +166,7 @@
                 </div>
             </div>
         </div>
-       <div class="container">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="women-item-carousel">

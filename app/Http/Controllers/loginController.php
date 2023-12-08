@@ -84,9 +84,6 @@ class loginController extends Controller
         $user = new User();
         $user->sdt = $request->input('sdt');
         $user->password = Hash::make($password);
-        $user->hovaten = $request->input('hovaten');
-        $user->email = $request->input('email1');
-        $user->diachi = $request->input('diachi');
         $user->save();
     
         alert()->success('Đăng ký thành công', 'Bạn đã đăng ký thành công tài khoản');

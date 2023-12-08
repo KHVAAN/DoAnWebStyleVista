@@ -60,14 +60,6 @@
                                             <textarea id="editor" name="mota">{{ $sanpham->mota }}</textarea>
                                         </div>
                                     </div>
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <label for="#">Hình sản phẩm</label>
-                                            <input type="file" name="images[]" id="images" multiple
-                                                accept="image/*">
-                                            <div id="preview-container"></div>
-                                        </div>
-                                    </div>
                                     <button type="submit" class="btn btn-primary">Xác nhận chỉnh sửa</button>
                                 </form>
                             </div>
@@ -143,21 +135,39 @@
                             <div id="collapseThree" class="panel-collapse collapse">
                                 <div class="panel-body">
                                     <div class="card-body">
-                                        <div class="form-row">
-                                            @foreach ($images as $item)
-                                                <div class="form-group col-md-6">
-                                                    <img src="{{ asset($item->tenimage) }}" alt=""
-                                                        class="img-fluid" style="height: 100px;">
-                                                    <form
-                                                        action="{{ route('admin.san-pham.xu-li-xoa-hinh', ['id' => $item->id]) }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <button type="submit" class="btn btn-primary">Xóa hình</button>
-                                                    </form>
-                                                </div>
-                                            @endforeach
-                                            
+                                        <div class="form-group">
+                                            <a href="#" class="btn btn-danger btn-icon-split" data-toggle="modal"
+                                                data-target="#logoutModal1">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-trash"></i>
+                                                </span>
+                                                <span class="text">Xóa sản phẩm con</span>
+                                            </a>
                                         </div>
+                                        <form action="#" method="POST">
+                                            @csrf
+                                            @if ($sanpham->trangthai == 1)
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-success btn-icon-split"
+                                                        name="phanquyen" value="0">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        <span class="text">Kích hoạt sản phẩm</span>
+                                                    </button>
+                                                </div>
+                                            @else
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-warning btn-icon-split"
+                                                        name="phanquyen" value="0">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                        </span>
+                                                        <span class="text">Vô hiệu hóa</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +244,7 @@
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>Tên sản phẩm</th>
                             <th>Màu sắc</th>
@@ -245,7 +255,7 @@
                             <th>Trạng thái</th>
                             <th>Chức năng</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     <tbody>
                         @foreach ($sanphamcon as $item)
                             <tr>
@@ -272,7 +282,8 @@
                                         Nháp
                                     @endif
                                 </td>
-                                <td>Chỉnh sửa</td>
+                                <td> Chỉnh sửa
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

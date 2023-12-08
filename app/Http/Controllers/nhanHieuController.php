@@ -14,7 +14,7 @@ class nhanHieuController extends Controller
     public function index()
     {
         $nhanhieu = NhanHieu::all();
-        return view('admin.nhanhieu.danh-sach-nhan-hieu', compact('nhanhieu'));
+        return view('admin.nhan-hieu.danh-sach-nhan-hieu', compact('nhanhieu'));
     }
 
     /**
@@ -22,7 +22,7 @@ class nhanHieuController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

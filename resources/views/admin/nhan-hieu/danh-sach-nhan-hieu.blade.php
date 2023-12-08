@@ -1,17 +1,17 @@
 @extends('admin.index')
-@section('title', 'nhãn hiệu sản phẩm')
+@section('title', 'Nhãn hiệu sản phẩm')
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Thêm mới nhãn hiệu sản phẩm</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Thêm nhãn hiệu</h6>
         </div>
         <div class="card-body">
             <form action="{{route('admin.nhan-hieu-san-pham.them-nhan-hieu-san-pham')}}" method="POST">
                 @csrf
                 <div class="form-row">
                     <div class="form-group col-md-9">
-                        <label for="inputEmail4">Tên nhãn hiệu sản phẩm</label>
-                        <input type="text" name="tennhanhieu" class="form-control" placeholder="Tên nhãn hiệu sản phẩm">
+                        <label for="inputEmail4">Tên nhãn hiệu</label>
+                        <input type="text" name="tennhanhieu" class="form-control" placeholder="Tên nhãn hiệu sản phẩm">
                         <div class="error-message">{{ $errors->first('tennhanhieu') }}</div>
                     </div>
                     <div class="form-group col-md-3">
@@ -30,29 +30,29 @@
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Danh sách nhãn hiệu</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách sản phẩm</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Tên nhãn hiệu</th>
+                            <th>Tên nhãn hiệu</th>
                             <th>Trạng thái</th>
                             <th>Ngày đăng</th>
                             <th>Ngày cập nhật</th>
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
-                            <th>Tên nhãn hiệu</th>
+                            <th>Tên màu</th>
                             <th>Trạng thái</th>
                             <th>Ngày đăng</th>
                             <th>Ngày cập nhật</th>
                             <th>Chức năng</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     <tbody>
                         @foreach ($nhanhieu as $item)
                             <tr>

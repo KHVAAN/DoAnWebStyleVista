@@ -31,7 +31,7 @@ class sanPhamController extends Controller
         $loaisp = LoaiSanPham::where('trangthai', 0)->get();
         $mau = Mau::where('trangthai', 0)->get();
         $nhanhieu = NhanHieu::where('trangthai', 0)->get();
-        return view('admin.san-pham.them-san-pham', compact('loaisp','nhanhieu','mau'));
+        return view('admin.san-pham.them-san-pham', compact('loaisp', 'nhanhieu', 'mau'));
     }
 
     /**
@@ -67,9 +67,8 @@ class sanPhamController extends Controller
             $hinhAnh->tenimage = 'uploads/' . $filename;
             $hinhAnh->save();
         }
-        Alert()->success('Thành công','Thêm sản phẩm thành công.');
+        Alert()->success('Thành công', 'Thêm sản phẩm thành công.');
         return redirect()->back();
-
     }
 
     /**
@@ -95,8 +94,8 @@ class sanPhamController extends Controller
             'soluong.required' => 'Không được để trống',
             'soluong.min' => 'Phải lớn hơn 0',
         ]);
-        if(ChiTietSanPham::where('mau_id', $request->input('mau'))->exists() && ChiTietSanPham::where('size', $request->input('kichthuoc'))->exists()){
-            Alert()->error('Thất bại','Sản phẩm đã tồn tại bạn chỉ có thể chỉnh sửa.');
+        if (ChiTietSanPham::where('mau_id', $request->input('mau'))->exists() && ChiTietSanPham::where('size', $request->input('kichthuoc'))->exists()) {
+            Alert()->error('Thất bại', 'Sản phẩm đã tồn tại bạn chỉ có thể chỉnh sửa.');
             return \redirect()->back();
         }
         $ChiTietSanPham = new ChiTietSanPham;
@@ -106,7 +105,7 @@ class sanPhamController extends Controller
         $ChiTietSanPham->soluong = $request->input('soluong');
         $ChiTietSanPham->trangthai = '0';
         $ChiTietSanPham->save();
-        Alert()->success('Thành công','Thêm sản phẩm thành công.');
+        Alert()->success('Thành công', 'Thêm sản phẩm thành công.');
         return \redirect()->back();
     }
     /**
@@ -119,7 +118,7 @@ class sanPhamController extends Controller
         $sanpham = SanPham::find($id);
         $images = image::where('sp_id', $id)->get();
         $sanphamcon = ChiTietSanPham::where('sanpham_id', $id)->get();
-        return view('admin.san-pham.chi-tiet-san-pham', compact('sanpham', 'sanphamcon', 'loaisanpham', 'nhanhieu','images'));
+        return view('admin.san-pham.chi-tiet-san-pham', compact('sanpham', 'sanphamcon', 'loaisanpham', 'nhanhieu', 'images'));
     }
 
     /**
@@ -135,7 +134,8 @@ class sanPhamController extends Controller
         $ctsp = SanPham::all();
         return view('user.home', compact('ctsp'));
     }
-    public function ctsanpham(string $id){
+    public function ctsanpham(string $id)
+    {
         $binhluan = binhluan::where('sanpham_id', $id)->get();
         $sanpham = SanPham::find($id);
         $images = image::where('sp_id', $id)->get();
@@ -146,17 +146,19 @@ class sanPhamController extends Controller
         $ChiTietSanPham = ChiTietSanPham::where('sanpham_id', $id)->get()->unique('mau.tenmau');
         $ChiTietSanPham1 = ChiTietSanPham::where('sanpham_id', $id)->get();
 
-        return view('user.chi-tiet-san-pham', compact('images','ChiTietSanPham','ChiTietSanPham1','gia','binhluan', 'sanpham'));
+        return view('user.chi-tiet-san-pham', compact('images', 'ChiTietSanPham', 'ChiTietSanPham1', 'gia', 'binhluan', 'sanpham'));
     }
-    public function binhluan(Request $request, string $id){
+    public function binhluan(Request $request, string $id)
+    {
         $binhluan = new binhluan;
         $binhluan->nguoidung_id = session('id');
         $binhluan->sanpham_id = $id;
-        $binhluan->noidung= $request->input('noidung');
+        $binhluan->noidung = $request->input('noidung');
         $binhluan->save();
         return \redirect()->back();
     }
-    public function xoaAnh(string $id){
+    public function xoaAnh(string $id)
+    {
         $image = Image::find($id);
         $image->delete();
         Alert()->success('Thành công', 'Xóa hình ảnh thành công');

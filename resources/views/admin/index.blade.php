@@ -352,7 +352,12 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 @php
-$name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
+                                $name = session('name');
+                                $email = session('email');
+                                $sdt = session('sdt');
+                                $diachi = session('diachi');
+                                @endphp
+                                data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $name }}</span>
                                 <?php
@@ -367,11 +372,12 @@ $name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="{{route('trang-chu-nguoi-dung')}}">
+                                <a class="dropdown-item" href="{{ route('trang-chu-nguoi-dung') }}">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Trang web
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#inforModal">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Trang cá nhân
                                 </a>
@@ -411,7 +417,43 @@ $name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+    <div class="modal fade" id="inforModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Thông tin tài khoản</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body"></div>
+                <div class="row" id="#inforModal">
+                    <div class="col-md-6">
+                        <img src={{ asset($avatar) }} class="w-100">
+                    </div>
+                    <div class="col-md-6">
+                        <dl>
+                            <dt>Họ và tên:</dt>
+                            <dd>{{ $name }}</dd>
 
+                            <dt>Email:</dt>
+                            <dd>{{ $email }}</dd>
+
+                            <dt>Số điện thoại:</dt>
+                            <dd>{{ $sdt }}</dd>
+
+                            <dt>Địa chỉ:</dt>
+                            <dd>{{ $diachi }}</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát</button>
+                    </div>
+            </div>
+        </div>
+    </div>
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -437,11 +479,10 @@ $name = session('name'); @endphp data-toggle="dropdown" aria-haspopup="true"
 
     @include('sweetalert::alert')
 </body>
-@include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9'])
+<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 

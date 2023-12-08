@@ -53,11 +53,12 @@
                                         <option selected value="2">Khách hàng</option>
                                     @endif
                                     </option>
-                                    @if ($user->phanquyen == 1)
+                                    {{-- @if ($user->phanquyen == 1)
                                         <option value="1">Quản trị viên</option>
                                         <option value="2">Khách hàng</option>
-                                    @endif
+                                    @endif --}}
                                 </select>
+
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputZip">Hình đại diện</label>
@@ -110,7 +111,6 @@
                             </div>
                         @endif
                     </form>
-
 
                     <a href="#" class="btn btn-primary btn-icon-split" data-toggle="modal"
                         data-target="#logoutModal2">

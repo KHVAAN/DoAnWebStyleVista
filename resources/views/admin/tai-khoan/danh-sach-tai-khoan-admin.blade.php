@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'Danh sách tài khoản')
+@section('title', 'Danh sách tài khoản quản trị viên')
 @section('content')
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -19,7 +19,7 @@
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>Email</th>
                             <th>Họ và tên</th>
@@ -28,7 +28,7 @@
                             <th>Trạng thái</th>
                             <th>Chức năng</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     <tbody>
                         @foreach ($users as $item)
                             <tr>
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    
+
 @section('scr')
     <!-- Page level plugins -->
     <script src="{{ asset('vendor/datatables/jquery.dataTables.min.js') }}"></script>
