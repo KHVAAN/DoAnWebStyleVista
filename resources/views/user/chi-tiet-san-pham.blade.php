@@ -95,7 +95,7 @@
                         <div class="total">
                             <div class="main-border-button">
                                 <a href="#">Thêm vào giỏ hàng</a>
-                                <a href="#">Mua ngay</a>
+                                <a href="/thanh-toan">Mua ngay</a>
                             </div>
                         </div>
                         <?php

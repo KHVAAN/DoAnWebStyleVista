@@ -352,13 +352,11 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 @php
-                                $name = session('name');
+$name = session('name');
                                 $email = session('email');
                                 $sdt = session('sdt');
-                                $diachi = session('diachi');
-                                @endphp
-                                data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
+                                $diachi = session('diachi'); @endphp
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ $name }}</span>
                                 <?php
                                 $avatar = session('avatar');
@@ -427,30 +425,31 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body"></div>
-                <div class="row" id="#inforModal">
-                    <div class="col-md-6">
-                        <img src={{ asset($avatar) }} class="w-100">
-                    </div>
-                    <div class="col-md-6">
-                        <dl>
-                            <dt>Họ và tên:</dt>
-                            <dd>{{ $name }}</dd>
+                <div class="modal-body">
+                    <div class="row" id="#inforModal">
+                        <div class="col-md-6">
+                            <img src="{{ asset('img/avatar.png') }}" class="w-50">
+                        </div>
+                        <div class="col-md-6">
+                            <dl>
+                                <dt>Họ và tên:</dt>
+                                <dd>{{ $name }}</dd>
 
-                            <dt>Email:</dt>
-                            <dd>{{ $email }}</dd>
+                                <dt>Email:</dt>
+                                <dd>{{ $email }}</dd>
 
-                            <dt>Số điện thoại:</dt>
-                            <dd>{{ $sdt }}</dd>
+                                <dt>Số điện thoại:</dt>
+                                <dd>{{ $sdt }}</dd>
 
-                            <dt>Địa chỉ:</dt>
-                            <dd>{{ $diachi }}</dd>
-                        </dl>
+                                <dt>Địa chỉ:</dt>
+                                <dd>{{ $diachi }}</dd>
+                            </dl>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát</button>
-                    </div>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Thoát</button>
+                </div>
             </div>
         </div>
     </div>

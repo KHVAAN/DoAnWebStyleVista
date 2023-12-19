@@ -40,6 +40,7 @@ Route::get('/gioi-thieu', function () {
 Route::get('/san-pham', function () {
     return view('user.san-pham');
 })->name('trang-san-pham');
+
 Route::get('/lien-he', function () {
     return view('user.lien-he');
 })->name('trang-lien-he');
@@ -64,6 +65,11 @@ Route::get('/thong-tin-khach-hang/doi-mat-khau', function () {
 Route::get('/thong-tin-khach-hang/dia-chi', function () {
     return view('user.dia-chi');
 })->name('trang-dia-chi');
+
+Route::get('/thanh-toan', function () {
+    return view('user.thanh-toan');
+})->name('trang-thanh-toan');
+
 Route::get('/404', function () {
     return view('404');
 })->name('trang-loi');

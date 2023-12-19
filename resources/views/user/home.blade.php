@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>YaMe</h2>
-                        <span>YaMe là thường hiệu thời trang Việt Nam dành cho giới trẻ.</span>
+                        <h2>Ben & Tod</h2>
+                        <span>Ben & Tod là một Thương hiệu May mặc hàng Thời trang Nam.</span>
                     </div>
                 </div>
             </div>
@@ -36,10 +36,10 @@
                                                 <li><a href="gio-hang"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/women-01.jpg" alt="">
+                                        <img src="" alt="">
                                     </div>
                                     <div class="down-content">
-                                        <h4>{{ $item->tensanpham }}</h4>
+                                        <h5>{{ $item->tensanpham }}</h5>
                                         <span></span>
                                         <ul class="stars">
                                             <li><i class="fa fa-heart-o" style="font-size:24px;"></i></li>
@@ -54,14 +54,14 @@
         </div>
     </section>
 
-    <!-- ***** Men Area Ends ***** -->
+
     <section class="section" id="women">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Ben & Tod</h2>
-                        <span>Ben & Tod là một Thương hiệu May mặc hàng Thời trang Nam.</span>
+                        <h2>Yame</h2>
+                        <span>YaMe là thường hiệu thời trang Việt Nam dành cho giới trẻ.</span>
                     </div>
                 </div>
             </div>
@@ -152,9 +152,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Women Area Ends ***** -->
 
-    <!-- ***** Kids Area Starts ***** -->
     <section class="section" id="kids">
         <div class="container">
             <div class="row">
@@ -252,9 +250,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Kids Area Ends ***** -->
 
-    <!-- ***** Kids Area Starts ***** -->
     <section class="section" id="kids">
         <div class="container">
             <div class="row">
@@ -352,9 +348,7 @@
             </div>
         </div>
     </section>
-    <!-- ***** Kids Area Ends ***** -->
 
-    <!-- ***** Kids Area Starts ***** -->
     <section class="section" id="kids">
         <div class="container">
             <div class="row">
@@ -452,5 +446,5 @@
             </div>
         </div>
     </section>
-    <!-- ***** Kids Area Ends ***** -->
+
 @endsection

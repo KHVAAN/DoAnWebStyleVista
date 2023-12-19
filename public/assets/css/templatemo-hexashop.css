@@ -2010,6 +2010,75 @@ Single Product Page
 
 /*
 ---------------------------------------------
+Thông tin khách hàng
+---------------------------------------------
+*/
+.btn-light {
+    color: #ffff;
+    background-color: #212529;
+    border-color: #f8f9fa;
+}
+
+
+/*
+---------------------------------------------
+Thông tin thanh toán
+---------------------------------------------
+*/
+
+.thanh-toan {
+
+    margin-top: 20px;
+}
+
+.thanh-toan h5 {
+    margin-bottom: 30px;
+}
+
+
+/*
+---------------------------------------------
+Thông tin thanh toán
+---------------------------------------------
+*/
+.field-input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/*
+---------------------------------------------
+Thông tin thanh toán
+---------------------------------------------
+*/
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
+    width: 2px;
+    height: 2px;
+    margin: -2px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}
+.product td{
+    margin-bottom: 20px;
+}
+
+/*
+---------------------------------------------
 About Us Page
 ---------------------------------------------
 */
@@ -2036,7 +2105,7 @@ About Us Page
     margin-left: 30px;
 }
 
-.about-us .right-content table{
+.about-us .right-content table {
     margin-top: 30px;
     width: 100%;
 }
@@ -2059,15 +2128,17 @@ About Us Page
     padding: 5px;
     text-align: center;
 }
-.about-us .right-content th, td {
+
+.about-us .right-content th,
+td {
     border: 1px solid #e1e1e1;
 }
 
 .about-us .left-content li,
-a {
+a{
     font-size: 15px;
     color: #191a20;
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -2277,9 +2348,9 @@ contact Us Page
 */
 
 .contact-us {
-    margin-top: 90px;
-    border-bottom: 3px dotted #eee;
-    padding-bottom: 90px;
+    margin-top: 50px;
+    /* border-bottom: 3px dotted #eee; */
+    padding-bottom: 50px;
 }
 
 .contact-us .section-heading {

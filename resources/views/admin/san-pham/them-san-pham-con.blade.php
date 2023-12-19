@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'thêm sản phẩm con')
+@section('title', 'Thêm sản phẩm con')
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-header py-3">

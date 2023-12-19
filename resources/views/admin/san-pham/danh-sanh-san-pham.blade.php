@@ -17,7 +17,7 @@
                             <th>Chức năng</th>
                         </tr>
                     </thead>
-                    <tfoot>
+                    {{-- <tfoot>
                         <tr>
                             <th>Tên sản phẩm</th>
                             <th>Loại sản phẩm</th>
@@ -25,7 +25,7 @@
                             <th>Trạng thái</th>
                             <th>Chức năng</th>
                         </tr>
-                    </tfoot>
+                    </tfoot> --}}
                     <tbody>
                         @foreach ($sanPham as $item)
                             <tr>

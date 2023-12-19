@@ -15,7 +15,7 @@ class loginController extends Controller
      */
     public function login(Request $request)
     {
-        $tt = User::where('email',$request->input('email'))->first();
+        $tt = User::where('email', $request->input('email'))->first();
         $ttt = $tt->trangthai ?? null;
         $request->validate([
             'email' => 'required|email',
@@ -27,23 +27,27 @@ class loginController extends Controller
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
         ]);
         $taiKhoan = $request->only('email', 'password');
-        if(Auth::attempt($taiKhoan)){
+        if (Auth::attempt($taiKhoan)) {
             $user = Auth::user();
-            session(['id' => $user->id, 
-            'name' => $user->hovaten, 
-            'chucvu' => $user->phanquyen, 
-            'avatar'=>$user->avatar,
-        ]);
+            session([
+                'id' => $user->id,
+                'name' => $user->hovaten,
+                'email' => $user->email,
+                'sdt' => $user->sdt,
+                'diachi' => $user->diachi,
+                'chucvu' => $user->phanquyen,
+                'avatar' => $user->avatar,
+            ]);
             $name = $user->hovaten;
             $phanQuyen = $user->phanQuyen;
             $chuyenDoi = intval($phanQuyen);
-            if($chuyenDoi == 0 || $chuyenDoi == 1 && $ttt == 0){
+            if ($chuyenDoi == 0 || $chuyenDoi == 1 && $ttt == 0) {
                 alert()->success('Đăng nhập thành công', 'Chào mừng ' . $name . ' đến với trang quản trị');
                 return \redirect()->route('admin.trang-chu');
             }
-        }else{
-                alert()->error('Đăng nhập không thành công', 'Tài khoản hoặc mật khẩu không chính xác! ');
-                return redirect()->back();
+        } else {
+            alert()->error('Đăng nhập không thành công', 'Tài khoản hoặc mật khẩu không chính xác! ');
+            return redirect()->back();
         }
     }
 
@@ -79,17 +83,17 @@ class loginController extends Controller
             'password.required' => 'Không được để trống',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
         ]);
-    
+
         $password = $request->input('password');
         $user = new User();
         $user->sdt = $request->input('sdt');
         $user->password = Hash::make($password);
         $user->save();
-    
+
         alert()->success('Đăng ký thành công', 'Bạn đã đăng ký thành công tài khoản');
         return redirect()->back();
     }
-    
+
 
     /**
      * Display the specified resource.
